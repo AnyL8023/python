@@ -34,10 +34,7 @@ class DB_CSV(object):
         data.append(object['companySize'])
         data.append(object['approve'])
         data.append(object['financeStage'])
-        companyLabelList = ""
-        for t in object['companyLabelList']:
-            companyLabelList += t+"|"
-        data.append(companyLabelList[:-1])
+        data.append(object['companyLabelList'])
         data.append(object['district'])
         data.append(object['companyShortName'])
         data.append(object['score'])
