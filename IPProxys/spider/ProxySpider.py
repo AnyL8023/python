@@ -49,7 +49,7 @@ class ProxySpider(object):
                 print 'spider proxys -------%s'%type(proxys)
                 proxys = validator.run_list(proxys)#这个是检测后的ip地址
 
-
+                sqlHelper.delete(sqlHelper.tableName,'1=1')
                 sqlHelper.batch_insert(sqlHelper.tableName,proxys)
 
 

@@ -28,7 +28,7 @@ class Validator(object):
         '''
         try:
             #首先将超时的全部删除
-            self.deleteOld()
+            # self.deleteOld()
             #接着检测剩余的ip,是否可用
             results = self.sqlHelper.selectAll()
             self.detect_pool.map(self.detect_db,results)

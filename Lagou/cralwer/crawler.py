@@ -1,73 +1,143 @@
 # -*- coding:utf-8 -*-
 import requests
 import json
+import datetime
+import time
 import config
+import headers
+from proxies import random_proxies
+from proxies import remove_proxy
+from proxies import check_proxy
 
 class Crawler(object):
 
     url = 'http://www.lagou.com/jobs/positionAjax.json'
     data = {'px':'new','pn':1}
+    # proxies = { "http": "http://124.88.67.17:843" }
     proxies = {}
     headers = {}
 
-    items = []
+    ISOTIMEFORMAT = "%Y-%m-%d %H:%M:%S"
+    isEnd = False
 
-    def run(self):
+    items = {}
+    result_count = {}
 
-        while True:
-            response = requests.post(self.url,self.data,proxies=self.proxies,headers=self.headers)
-            print  response.url,self.data
+    def run(self,run_time):
+        self.clear()
 
-            if response.status_code != 200:
+        while self.isEnd == False:
+            #headers
+            self.headers = headers.random_headers()
+            #proxies
+            ipProxy = random_proxies()
+            http = "http://%s:%d"%(ipProxy['ip'],ipProxy['port'])
+            self.proxies = {"http": http}
+
+            response = None
+            try:
+                response = requests.post(self.url,self.data,proxies=self.proxies,headers=self.headers,timeout=config.TIME_OUT)
+
+                # print self.proxies
+                # print self.headers
+                print  response.url,self.data,response.status_code,self.headers['User-Agent']
+
+                if response.status_code != 200:
+                    check_proxy(ipProxy)
+                    continue
+            except requests.exceptions.Timeout:
+                check_proxy(ipProxy)
                 continue
+            except requests.exceptions.ProxyError:
+                remove_proxy(ipProxy)
+                continue
+            except requests.exceptions.ConnectionError:
+                check_proxy(ipProxy)
+                continue
+            # except Exception :
+            #     print Exception
+            #     check_proxy(ipProxy)
+            #     continue
 
+            #标记返回是否成功
             isSuccess = True
 
             try:
                 jdict = json.loads(response.content)
             except ValueError:
                 isSuccess = False
+                check_proxy(ipProxy)
+                continue
 
             if isSuccess == True:
                 jcontent = jdict["content"]
                 jposresult = jcontent["positionResult"]
                 jresult = jposresult["result"];
+
                 for each in jresult:
-                    item = {}
-                    item['companyId'] = each['companyId']
-                    item['workYear'] = each['workYear']
-                    item['education'] = each['education']
-                    item['jobNature'] = each['jobNature']
-                    item['positionName'] = each['positionName']
-                    item['positionId'] = each['positionId']
-                    item['createTime'] = each['createTime']
-                    item['city'] = each['city']
-                    item['companyLogo'] = each['companyLogo']
-                    item['industryField'] = each['industryField']
-                    item['positionAdvantage'] = each['positionAdvantage']
-                    item['salary'] = each['salary']
-                    item['companySize'] = each['companySize']
-                    item['approve'] = each['approve']
-                    item['financeStage'] = each['financeStage']
-                    item['companyLabelList'] = each['companyLabelList']
-                    item['district'] = each['district']
-                    item['companyShortName'] = each['companyShortName']
-                    item['score'] = each['score']
-                    item['publisherId'] = each['publisherId']
-                    item['explain'] = each['explain']
-                    item['plus'] = each['plus']
-                    item['pcShow'] = each['pcShow']
-                    item['appShow'] = each['appShow']
-                    item['deliver'] = each['deliver']
-                    item['gradeDescription'] = each['gradeDescription']
-                    item['promotionScoreExplain'] = each['promotionScoreExplain']
-                    item['businessZones'] = each['businessZones']
-                    item['imState'] = each['imState']
-                    item['lastLogin'] = each['lastLogin']
-                    item['formatCreateTime'] = each['formatCreateTime']
-                    item['adWord'] = each['adWord']
-                    item['companyFullName'] = each['companyFullName']
-                    print item['companyFullName'],item['createTime']
-                    self.items.append(item)
-            self.data['pn'] += 1
-            break
+                    item = self.get_item(each)
+
+                    if self.format_time(item['createTime']) < self.format_time(run_time):
+                        self.isEnd = True
+                        break
+                    # print item['publisherId'],item['companyFullName'],self.format_time(item['createTime'])
+                    # self.items.append(item)
+
+                    if self.result_count.has_key(item['publisherId']) and self.items.has_key(item['publisherId']):
+                        self.result_count[item['publisherId']] += 1
+                        pass
+                    else:
+                        self.items[item['publisherId']] = item
+                        self.result_count[item['publisherId']] = 1
+
+                self.data['pn'] += 1
+            print len(self.items)
+        return self.items
+
+
+    def format_time(self,str_time):
+        t = time.strptime(str_time, self.ISOTIMEFORMAT)
+        return datetime.datetime(t.tm_year, t.tm_mon, t.tm_mday, t.tm_hour, t.tm_min)
+
+    def get_item(self,each):
+        item = {}
+        item['companyId'] = each['companyId']
+        item['workYear'] = each['workYear']
+        item['education'] = each['education']
+        item['jobNature'] = each['jobNature']
+        item['positionName'] = each['positionName']
+        item['positionId'] = each['positionId']
+        item['createTime'] = each['createTime']
+        item['city'] = each['city']
+        item['companyLogo'] = each['companyLogo']
+        item['industryField'] = each['industryField']
+        item['positionAdvantage'] = each['positionAdvantage']
+        item['salary'] = each['salary']
+        item['companySize'] = each['companySize']
+        item['approve'] = each['approve']
+        item['financeStage'] = each['financeStage']
+        item['companyLabelList'] = each['companyLabelList']
+        item['district'] = each['district']
+        item['companyShortName'] = each['companyShortName']
+        item['score'] = each['score']
+        item['publisherId'] = each['publisherId']
+        item['explain'] = each['explain']
+        item['plus'] = each['plus']
+        item['pcShow'] = each['pcShow']
+        item['appShow'] = each['appShow']
+        item['deliver'] = each['deliver']
+        item['gradeDescription'] = each['gradeDescription']
+        item['promotionScoreExplain'] = each['promotionScoreExplain']
+        item['businessZones'] = each['businessZones']
+        item['imState'] = each['imState']
+        item['lastLogin'] = each['lastLogin']
+        item['formatCreateTime'] = each['formatCreateTime']
+        item['adWord'] = each['adWord']
+        item['companyFullName'] = each['companyFullName']
+        return item
+
+    def clear(self):
+        self.data = {'px': 'new', 'pn': 1}
+        self.isEnd = False
+        self.items = {}
+        self.result_count = {}

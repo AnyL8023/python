@@ -54,9 +54,11 @@ class Html_Parser(object):
 
                 # proxy ={'ip':ip,'port':int(port),'type':int(type),'protocol':int(protocol),'country':country,'area':area,'updatetime':updatetime,'speed':100}
                 proxy ={'ip':ip,'port':int(port),'type':int(type),'protocol':int(protocol),'country':country,'area':area,'speed':100}
-                print proxy
-                proxylist.append(proxy)
-
+                # print proxy
+                if proxy['type'] == 0 and proxy['country'] == u'中国':
+                    print proxy
+                    proxylist.append(proxy)
+                # proxylist.append(proxy)
             return proxylist
 
     def AuthCountry(self,addr):
