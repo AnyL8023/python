@@ -50,11 +50,13 @@ HEADER = {
 }
 
 
-IP_PROXIES_URL = u"http://best8023.com:8000/?method=random"
-IP_DELETE_URL = u"http://best8023.com:8000/?method=remove"
-# IP_PROXIES_URL = u"http://127.0.0.1:8000/?method=random"
-# IP_DELETE_URL = u"http://127.0.0.1:8000/?method=remove"
+# IP_PROXIES_URL = u"http://best8023.com:8000/?method=random"
+# IP_DELETE_URL = u"http://best8023.com:8000/?method=remove"
+IP_PROXIES_URL = u"http://127.0.0.1:8000/?method=random"
+IP_DELETE_URL = u"http://127.0.0.1:8000/?method=remove"
 
 
 TIME_OUT = 10
 CHECK_TIME = 5
+
+SAVE_FILE_PATH = u"H:/Python/python/Lagou/data/"
