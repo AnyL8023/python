@@ -1,5 +1,22 @@
 #coding:utf-8
 import random
+import logging
+
+# logging.basicConfig(filename='tmp/my_log_test.log', level=logging.INFO)  # StreamHandler
+# 配置日志信息
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+                    datefmt='%m-%d %H:%M',
+                    filename='log/my_crawler.log',
+                    filemode='w')
+# 定义一个Handler打印INFO及以上级别的日志到sys.stderr
+console = logging.StreamHandler()
+console.setLevel(logging.DEBUG)
+# 设置日志打印格式
+formatter = logging.Formatter('%(name)-12s: %(levelname)-8s %(message)s')
+console.setFormatter(formatter)
+# 将定义好的console日志handler添加到root logger
+logging.getLogger('').addHandler(console)
 
 '''
 USER_AGENTS 随机头信息
@@ -50,13 +67,14 @@ HEADER = {
 }
 
 
-# IP_PROXIES_URL = u"http://best8023.com:8000/?method=random"
-# IP_DELETE_URL = u"http://best8023.com:8000/?method=remove"
-IP_PROXIES_URL = u"http://127.0.0.1:8000/?method=random"
-IP_DELETE_URL = u"http://127.0.0.1:8000/?method=remove"
+IP_PROXIES_URL = u"http://best8023.com:8000/?method=random"
+IP_DELETE_URL = u"http://best8023.com:8000/?method=remove"
+# IP_PROXIES_URL = u"http://127.0.0.1:8000/?method=random"
+# IP_DELETE_URL = u"http://127.0.0.1:8000/?method=remove"
 
 
 TIME_OUT = 10
 CHECK_TIME = 5
 
-SAVE_FILE_PATH = u"H:/Python/python/Lagou/data/"
+SAVE_FILE_PATH = u"data/"
+# SAVE_FILE_PATH = u"/software/pythonDir/web/Lagou/data/"

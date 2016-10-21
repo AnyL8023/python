@@ -2,6 +2,7 @@
 
 import csv
 import config
+import logging
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -28,13 +29,13 @@ class DB_CSV(object):
         data.append(object['createTime'])
         data.append(object['city'])
         data.append(object['companyLogo'])
-        data.append(object['industryField'])
+        data.append(self.getString(object['industryField']))
         data.append(object['positionAdvantage'])
         data.append(object['salary'])
         data.append(object['companySize'])
         data.append(object['approve'])
         data.append(object['financeStage'])
-        data.append(object['companyLabelList'])
+        data.append(self.getString(object['companyLabelList']))
         data.append(object['district'])
         data.append(object['companyShortName'])
         data.append(object['score'])
@@ -46,15 +47,29 @@ class DB_CSV(object):
         data.append(object['deliver'])
         data.append(object['gradeDescription'])
         data.append(object['promotionScoreExplain'])
-        data.append(object['businessZones'])
+        data.append(self.getString(object['businessZones']))
         data.append(object['imState'])
         data.append(object['lastLogin'])
         data.append(object['formatCreateTime'])
         data.append(object['adWord'])
         data.append(object['companyFullName'])
 
-        print "write : ",object
+        # print "write : ",object
+        logging.info("write : publisherId=%d companyFullName=%s",object['positionId'],object['companyFullName'])
         writer.writerow(data)
 
     def close(self):
         self.csvfile.close()
+
+    def getString(self,object):
+        result = ""
+        if type(object) == None:
+            return None
+        elif type(object) == list:
+            result = "".join(x + "|" for x in object)
+            result = result[:-1]
+        elif type(object) == str:
+            result = object
+        elif type(object) == unicode:
+            result = object
+        return result

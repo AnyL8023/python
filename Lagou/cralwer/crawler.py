@@ -9,6 +9,8 @@ from proxies import random_proxies
 from proxies import remove_proxy
 from proxies import check_proxy
 
+import logging
+
 class Crawler(object):
 
     url = 'http://www.lagou.com/jobs/positionAjax.json'
@@ -40,7 +42,8 @@ class Crawler(object):
 
                 # print self.proxies
                 # print self.headers
-                print  response.url,self.data,response.status_code,self.headers['User-Agent']
+                # print  response.url,self.data,response.status_code,self.headers['User-Agent']
+                logging.info("crawler : url=%s page=%d http_code=%d agent=%s",response.url,self.data['pn'],response.status_code,self.headers['User-Agent'])
 
                 if response.status_code != 200:
                     check_proxy(ipProxy)
@@ -53,6 +56,11 @@ class Crawler(object):
                 continue
             except requests.exceptions.ConnectionError:
                 check_proxy(ipProxy)
+                continue
+            except Exception,e:
+                isSuccess = False
+                check_proxy(ipProxy)
+                logging.error(e)
                 continue
             # except Exception :
             #     print Exception
@@ -68,6 +76,11 @@ class Crawler(object):
                 isSuccess = False
                 check_proxy(ipProxy)
                 continue
+            except Exception,e:
+                isSuccess = False
+                check_proxy(ipProxy)
+                logging.error(e)
+                continue
 
             if isSuccess == True:
                 jcontent = jdict["content"]
@@ -78,20 +91,22 @@ class Crawler(object):
                     item = self.get_item(each)
 
                     if self.format_time(item['createTime']) < self.format_time(run_time):
+                        logging.warning("crawler stop : time=%s",self.format_time(item['createTime']))
                         self.isEnd = True
                         break
                     # print item['publisherId'],item['companyFullName'],self.format_time(item['createTime'])
                     # self.items.append(item)
 
-                    if self.result_count.has_key(item['publisherId']) and self.items.has_key(item['publisherId']):
-                        self.result_count[item['publisherId']] += 1
+                    if self.result_count.has_key(item['positionId']) and self.items.has_key(item['positionId']):
+                        self.result_count[item['positionId']] += 1
                         pass
                     else:
-                        self.items[item['publisherId']] = item
-                        self.result_count[item['publisherId']] = 1
+                        self.items[item['positionId']] = item
+                        self.result_count[item['positionId']] = 1
 
                 self.data['pn'] += 1
-            print len(self.items)
+            # print len(self.items)
+            logging.info("crawler : count=%d",len(self.items))
         return self.items
 
 

@@ -9,8 +9,7 @@ ISOTIMEFORMAT = "%Y-%m-%d %H:%M:%S"
 
 crawler = Crawler()
 
-MIN = 28
-
+MIN = 27
 crawler = Crawler()
 
 while True:
@@ -23,8 +22,9 @@ while True:
 
         fileName = run_time.strftime("%Y-%m-%d-%H")
         db = DB_CSV(fileName)
-        for item in items.values():
-            db.save(item)
+        if len(items)>0:
+            for item in items.values():
+                db.save(item)
         db.close()
 
     time.sleep(60)
