@@ -85,10 +85,12 @@ class Crawler(object):
             if isSuccess == True:
                 jcontent = jdict["content"]
                 jposresult = jcontent["positionResult"]
-                jresult = jposresult["result"];
+                # jresult = jposresult["result"];
 
-                for each in jresult:
-                    item = self.get_item(each)
+                items_size = len(self.items)
+
+                for each in jposresult:
+                    item = self.get_item(each['position'])
 
                     if self.format_time(item['createTime']) < self.format_time(run_time):
                         logging.warning("crawler stop : time=%s",self.format_time(item['createTime']))
@@ -106,7 +108,10 @@ class Crawler(object):
 
                 self.data['pn'] += 1
             # print len(self.items)
-            logging.info("crawler : count=%d",len(self.items))
+            if items_size<len(self.items):
+                logging.info("crawler : count=%d",len(self.items))
+            else:
+                self.isEnd = True
         return self.items
 
 
@@ -149,6 +154,7 @@ class Crawler(object):
         item['formatCreateTime'] = each['formatCreateTime']
         item['adWord'] = each['adWord']
         item['companyFullName'] = each['companyFullName']
+        logging.info("current data createTime : %s",item['createTime'])
         return item
 
     def clear(self):

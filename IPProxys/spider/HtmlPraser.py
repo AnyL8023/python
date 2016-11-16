@@ -22,6 +22,7 @@ class Html_Parser(object):
             proxylist=[]
             root = etree.HTML(response)
             proxys = root.xpath(parser['pattern'])
+            print proxys
             for proxy in proxys:
                 # print parser['postion']['ip']
                 ip = proxy.xpath(parser['postion']['ip'])[0].text
@@ -54,11 +55,12 @@ class Html_Parser(object):
 
                 # proxy ={'ip':ip,'port':int(port),'type':int(type),'protocol':int(protocol),'country':country,'area':area,'updatetime':updatetime,'speed':100}
                 proxy ={'ip':ip,'port':int(port),'type':int(type),'protocol':int(protocol),'country':country,'area':area,'speed':100}
-                # print proxy
-                if proxy['type'] == 0 and proxy['country'] == u'中国':
-                    print proxy
-                    proxylist.append(proxy)
-                # proxylist.append(proxy)
+                print proxy
+                # if proxy['type'] == 0 and proxy['country'] == u'中国':
+                #     print proxy
+                #     proxylist.append(proxy)
+                print proxy
+                proxylist.append(proxy)
             return proxylist
 
     def AuthCountry(self,addr):

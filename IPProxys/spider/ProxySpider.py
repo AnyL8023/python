@@ -32,7 +32,6 @@ class ProxySpider(object):
             if count[0]< MINNUM:
                 proxys = self.crawl_pool.map(self.crawl,parserList)
                 #这个时候proxys的格式是[[{},{},{}],[{},{},{}]]
-                # print proxys
                 #这个时候应该去重:
 
                 proxys_tmp = []
@@ -63,6 +62,7 @@ class ProxySpider(object):
         proxys = []
         html_parser = Html_Parser()
         for url in parser['urls']:
+           # print "crawl url = ",url
            response = Html_Downloader.download(url)
            # print response
            if response!=None:

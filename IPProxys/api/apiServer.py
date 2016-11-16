@@ -82,7 +82,7 @@ class WebRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
                             break
 
             elif method == 'random':
-                conditions.append("'中国' LIKE '中国%'")
+                # conditions.append("'中国' LIKE '中国%'")
                 conditions.append("types = 0")
                 conditions.append("speed <= 2")
                 if len(conditions) > 1:

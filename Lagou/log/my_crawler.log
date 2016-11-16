@@ -1,0 +1,147 @@
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com
+11-16 09:28 requests.packages.urllib3.connectionpool DEBUG    "GET /?method=random HTTP/1.1" 404 None
+11-16 09:28 requests.packages.urllib3.connectionpool INFO     Starting new HTTP connection (1): best8023.com

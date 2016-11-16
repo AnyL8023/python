@@ -166,6 +166,5 @@ var _hmt = _hmt || [];
 
 root = etree.HTML(html)
 proxys = root.xpath(".//*[@id='footer']/div/table/tr[position()>1]")
-
 for proxy in proxys:
     print proxy.xpath('./td[1]')[0].text

@@ -11,16 +11,19 @@ class Html_Downloader(object):
         count = 0#重试次数
         r=''
         try:
+            print "crawl url=", url, " agent = ", config.HEADER['User-Agent']
             r = requests.get(url=url,headers=config.HEADER,timeout=config.TIMEOUT)
             r.encoding ='gbk'
             while count< config.RETRY_TIME:
                 if (not r.ok) or len(r.content)<500 :
-                    response = requests.get("http://127.0.0.1:%s/?method=get&types=0&count=10"%config.API_PORT)
+                    response = requests.get(url)
+                    # response = requests.get("http://127.0.0.1:%s/?method=get&types=0&count=10" % config.API_PORT)
                     if response.ok:
                         content =  response.text
                         choose = random.choice(json.loads(content))
                         proxies={"https": "http://%s:%s"%(choose[0],choose[1])}
                         try:
+                            print "crawl url=",url," agent = ",config.HEADER['User-Agent']
                             r = requests.get(url=url,headers=config.HEADER,timeout=config.TIMEOUT,proxies=proxies)
                             r.encoding ='gbk'
                             count += 1
@@ -39,12 +42,14 @@ class Html_Downloader(object):
             while count< config.RETRY_TIME:
                 if r==''or (not r.ok) or len(r.content)<500 :
                     try:
-                        response = requests.get("http://127.0.0.1:%s/?method=get&types=0&count=10"%config.API_PORT)
+                        response = requests.get(url)
+                        # response = requests.get("http://127.0.0.1:%s/?method=get&types=0&count=10"%config.API_PORT)
                         if response.ok:
                             content =  response.text
                             choose = random.choice(json.loads(content))
                             proxies={"https": "http://%s:%s"%(choose[0],choose[1])}
                             try:
+                                print "crawl url=", url, " agent = ", config.HEADER['User-Agent']
                                 r = requests.get(url=url,headers=config.HEADER,timeout=config.TIMEOUT,proxies=proxies)
                                 r.encoding ='gbk'
                                 count += 1

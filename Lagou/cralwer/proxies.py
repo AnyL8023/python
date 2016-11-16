@@ -16,7 +16,7 @@ def random_proxies():
 
     ipProxy = choice(ip_proxy_pool)
     # print "random : ",ipProxy
-    logging.error("random : http://%s:%d",ipProxy['ip'],ipProxy['port'])
+    logging.info("random : http://%s:%d",ipProxy['ip'],ipProxy['port'])
 
     return ipProxy
 
