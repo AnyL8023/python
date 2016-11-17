@@ -9,7 +9,7 @@ ISOTIMEFORMAT = "%Y-%m-%d %H:%M:%S"
 
 crawler = Crawler()
 
-MIN = 28
+MIN = 20
 crawler = Crawler()
 
 while True:
