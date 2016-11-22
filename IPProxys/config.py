@@ -87,7 +87,7 @@ CHINA_AREA=[u'河北',u'山东',u'辽宁',u'黑龙江',u'吉林'
 QQWRY_PATH="./data/qqwry.dat"
 
 THREADNUM = 20
-API_PORT=8000
+API_PORT=8001
 '''
 爬虫爬取和检测ip的设置条件
 不需要检测ip是否已经存在，因为会定时清理
