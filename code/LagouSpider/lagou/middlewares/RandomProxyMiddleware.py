@@ -4,6 +4,8 @@ import random
 import base64
 import logging
 import requests
+import datetime
+from lagou.util.CookiesUtil import CookiesUtil
 
 log = logging.getLogger('middlewares.RandomProxyMiddleware')
 
@@ -27,7 +29,6 @@ class RandomProxy(object):
         self.http_error_code = settings.get('RETRY_HTTP_CODES')
         # IP Proxy Pool Size
         self.ip_proxy_pool_size = settings.get('IP_PROXY_POOL_SIZE')
-
 
         self.read_ip_proxy_file()
 
@@ -60,6 +61,13 @@ class RandomProxy(object):
         print "proxy_address:\t",proxy_address
         print "proxy_user_pass:\t",proxy_user_pass
         print "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+        print "^^^^^^^^^^^^^^^^^^^^^^^^headers^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+        # request.cookies['user_trace_token'] = time
+        # request.cookies['LGUID'] = time
+        # print CookiesUtil().getCookies()
+        print request.cookies
+        print request.meta
+        print "^^^^^^^^^^^^^^^^^^^^^^^^headers^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
 
         if proxy_user_pass:
             request.meta['proxy'] = proxy_address
@@ -68,6 +76,7 @@ class RandomProxy(object):
         else:
             request.meta['proxy'] = proxy_address
             log.debug('Proxy user pass not found')
+
         log.debug('Using proxy <%s>, %d proxies left' % (proxy_address, len(self.proxies)))
 
     def process_exception(self, request, exception, spider):
@@ -128,6 +137,9 @@ class RandomProxy(object):
             self.chosen_proxy = parts.group(1) + parts.group(3)
 
     def process_response(self, request, response, spider):
+        print "^^^^^^^^^^^^^^^^^^^^^^^^headers^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+        print response.headers
+        print "^^^^^^^^^^^^^^^^^^^^^^^^headers^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
         if response.status in self.http_error_code:
             if 'proxy' not in request.meta:
                 return

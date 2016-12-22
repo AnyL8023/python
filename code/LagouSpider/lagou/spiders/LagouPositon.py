@@ -6,6 +6,7 @@ import logging
 import time
 import datetime
 from scrapy.utils.project import get_project_settings
+from lagou.util.CookiesUtil import CookiesUtil
 
 log = logging.getLogger('middlewares.RandomProxyMiddleware')
 
@@ -29,6 +30,7 @@ class LagoupositonSpider(scrapy.Spider):
     #是否继续运行
     isBreak = False
 
+    # cookies = {'cookiejar':'JSESSIONID=A5A36A82B74C173A6FA034F6E4408029; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1482386458; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1482386458; user_trace_token=20161222140101-bd595fd7bade428a8fbb89bfded6b142; _ga=GA1.2.2128995402.1482386459; LGRID=20161222140103-0561155c-c80c-11e6-808c-5254005c3644; LGUID=20161222140103-056115c3-c80c-11e6-808c-5254005c3644; index_location_city=%E6%9D%AD%E5%B7%9E'}
     # city = u'北京'
     #kds = [u'java','python','PHP','.NET','JavaScript','C#','C++','C','VB','Dephi','Perl','Ruby','Go','ASP','Shell']
     # kds = [u'大数据',u'云计算',u'docker',u'中间件','Node.js',u'数据挖掘',u'自然语言处理',u'搜索算法',u'精准推荐',u'全栈工程师',u'图像处理',u'机器学习',u'语音识别']
@@ -49,8 +51,10 @@ class LagoupositonSpider(scrapy.Spider):
          #查询特定关键词的内容，通过request
          # return [scrapy.http.FormRequest(self.myurl,
          #                                formdata={'pn':str(self.curpage),'kd':self.kd},callback=self.parse)]
-        return [scrapy.http.FormRequest(self.crawl_url,
-                                        formdata={'pn': str(self.curpage),'px':'new'}, callback=self.parse)]
+        return [scrapy.http.FormRequest(self.crawl_url,formdata={'pn': str(self.curpage),'px':'new'},
+                                        #meta=self.cookies,
+                                        cookies=CookiesUtil().getCookies(),
+                                        callback=self.parse)]
 
     def parse(self, response):
         item = LagouItem()
@@ -121,7 +125,14 @@ class LagoupositonSpider(scrapy.Spider):
             print "===================================="
             print  "run_time : ",self.run_time
             print "===================================="
+            time = datetime.datetime.strftime(datetime.datetime.now(), '%Y%m%d%H%M%S')
+            cookies = {
+                'user_trace_token': time,
+                'LGUID': time,
+            }
             yield scrapy.http.FormRequest(self.crawl_url, formdata={'pn': str(self.curpage), 'px': 'new'},
+                                          # meta=self.cookies,
+                                          cookies=CookiesUtil().getCookies(),
                                           callback=self.parse)
 
 
@@ -141,3 +152,11 @@ class LagoupositonSpider(scrapy.Spider):
     def format_time(self,str_time):
         t = time.strptime(str_time, get_project_settings().get('ISOTIMEFORMAT'))
         return datetime.datetime(t.tm_year, t.tm_mon, t.tm_mday, t.tm_hour, t.tm_min)
+
+    def getCookies(self):
+        time = datetime.datetime.strftime(datetime.datetime.now(), '%Y%m%d%H%M%S')
+        cookies = {
+            'user_trace_token': time,
+            'LGUID': time,
+        }
+        return  cookies;

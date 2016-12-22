@@ -57,5 +57,10 @@ class LagouItem(scrapy.Item):
     adWord = scrapy.Field()
     companyFullName = scrapy.Field()
 
-
-
+class JobItem(scrapy.Item):
+    positionId = scrapy.Field()
+    metaKeywords = scrapy.Field()
+    metaDescription = scrapy.Field()
+    advantage = scrapy.Field()
+    description = scrapy.Field()
+    address = scrapy.Field()
